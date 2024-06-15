@@ -107,7 +107,7 @@ B2 = {
     164864: 254, 165120: 255}
 
 
-def encode(value):
+def encode(value: bytes) -> str:
     """Encodes bytes to a base65536 string."""
     stream = io.StringIO()
     length = len(value)
@@ -119,7 +119,7 @@ def encode(value):
     return stream.getvalue()
 
 
-def decode(value):
+def decode(value: str) -> bytes:
     """Decodes bytes from a base65536 string."""
     stream = io.BytesIO()
     done = False
